@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int x;
+	    cin>>x;
+	    if(x%2==0 && x%7==0)cout<<"alice"<<endl;
+	    else if(x%2!=0 && x%9==0)cout<<"bob"<<endl;
+	    else cout<<"charlie"<<endl;
+	}
+	return 0;
+}
