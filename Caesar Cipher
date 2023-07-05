@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+string rotateString(string str, int k) {
+    string result = "";
+    for (char c : str) {
+        if (isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            result += static_cast<char>((c - base + k) % 26 + base);
+        } else {
+            result += c;
+        }
+    }
+    return result;
+}
+
+int main() {
+    int Q;
+    cin >> Q;
+
+    while (Q--) {
+        int N;
+        cin >> N;
+
+        string S, T, U;
+        cin >> S >> T >> U;
+
+        int K = 0;
+        for (int i = 0; i < N; i++) {
+            if (isalpha(S[i])) {
+                int shift = (T[i] - S[i] + 26) % 26;
+                if (K == 0)
+                    K = shift;
+                else if (K != shift) {
+                    cout << "Invalid input: The strings S and T do not have a consistent ROT-K cipher." << endl;
+                    break;
+                }
+            }
+        }
+
+        string cipher_U = rotateString(U, K);
+        cout  << cipher_U << endl;
+    }
+
+     return 0;
+}
