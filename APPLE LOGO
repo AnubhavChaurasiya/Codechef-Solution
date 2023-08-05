@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Logo</title>
+     <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+
+        }
+        .container{
+            margin: 90px auto 0 auto;
+            max-width: 180px;
+        }
+        .apple{
+            background-color: silver;
+            background: linear-gradient(silver);
+            width: 208px;
+            height: 198px;
+            position: absolute;
+            border-radius: 35% 35% 41% /  42% 42% 75% 75%;;
+        }
+        .apple::before{
+            background-color: silver;
+            content: "";
+            width: 55px;
+            height: 55px;
+            position: absolute;
+            margin: -51px 0 0 100px;
+            border-radius: 100px 0;
+            z-index: 5;
+        }
+     </style>
+</head>
+<body>
+    <div class="container">
+    <div class="apple"></div>
+</div>
+</body>
+</html>
